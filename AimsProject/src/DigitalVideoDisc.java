@@ -1,5 +1,8 @@
+//package hust.soict.dsai.aims.disc;
 
 public class DigitalVideoDisc {
+	private static int nbDigitalVideoDisc = 0;
+	private int id;
 	private String title;
 	private String category;
 	private String director;
@@ -8,41 +11,53 @@ public class DigitalVideoDisc {
 
 	@Override
 	public String toString() {
-		return "DVD [title=" + title + ", category=" + category + ", director=" + director + ", length="
-				+ length + ", cost=" + cost + "]";
+		return "DVD - [" + title + "] - [" + category + "] - [" + director + "] - ["
+				+ length + "] : [" + cost + "] $";
 	}
 
-	public DigitalVideoDisc(String title) {
+	public DigitalVideoDisc() {
+
+	}
+
+	public DigitalVideoDisc(int id, String title) {
 		this.title = title;
+		this.id = id;
+		nbDigitalVideoDisc = id;
 	}
 
-	public DigitalVideoDisc(String title, String category, float cost) {
+	public DigitalVideoDisc(int id, String title, String category, float cost) {
+		this.id = id;
 		this.title = title;
 		this.category = category;
 		this.cost = cost;
+		nbDigitalVideoDisc = id;
 	}
 
-	public DigitalVideoDisc(String director, String category, String title, float cost) {
+	public DigitalVideoDisc(int id, String director, String category, String title, float cost) {
 		this.director = director;
 		this.category = category;
 		this.title = title;
 		this.cost = cost;
+		this.id = id;
+		nbDigitalVideoDisc = id;
 	}
 
-	public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
+	public DigitalVideoDisc(int id, String title, String category, String director, int length, float cost) {
 		this.title = title;
 		this.category = category;
 		this.director = director;
 		this.length = length;
 		this.cost = cost;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
+		this.id = id;
+		nbDigitalVideoDisc = id;
 	}
 
 	public String getTitle() {
 		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	public String getCategory() {
@@ -59,6 +74,10 @@ public class DigitalVideoDisc {
 
 	public float getCost() {
 		return cost;
+	}
+
+	public int getid() {
+		return id;
 	}
 
 }
