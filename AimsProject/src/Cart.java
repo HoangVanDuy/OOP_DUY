@@ -67,6 +67,20 @@ public class Cart {
 		}
 	}
 
+	// Add an arbitrary number of arguments for dvd
+	// public void addDigitalVideoDisc(DigitalVideoDisc... dvds){
+	// int maxOrdered = currentOrdered();
+	// int i = 0;
+	// for( DigitalVideoDisc dvd : dvds) {
+	// if(currentOrdered() == MAX_NUMBERS_ORDERED) {
+	// break;
+	// }else
+	// itemsOrdered[maxOrdered + i] = dvd;
+	// System.out.println("\nThis "+ dvd.getTitle() + " add successfull");
+	// i++;
+	// }
+	//
+	// }
 	// Add two DVD
 	public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
 		int maxOrdered = currentOrdered();
@@ -135,7 +149,7 @@ public class Cart {
 	public void searchbyId(int id) {
 		int result = 0;
 		for (DigitalVideoDisc dvd : itemsOrdered) {
-			if (dvd != null /* && dvd.getid() == id */) {
+			if (dvd != null && dvd.getid() == id) {
 				System.out.println("Result : ");
 				System.out.println(dvd);
 				result++;
